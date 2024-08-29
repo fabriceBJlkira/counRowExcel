@@ -13,9 +13,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['excelFile'])) {
     if ($file['error'] !== UPLOAD_ERR_OK) {
         die("Upload failed with error code " . $file['error']);
     }
+    // anarany dossier ande amindrana an ilay fichier
+    $uploadDir = 'uploads/';
+    
+    // mijery ra miexiste ilay dossier uploads, ra tsy miexiste dia foronina
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0755, true); // Creates the directory with read/write/execute permissions
+    }
 
     // afindra anaty le dossier uploads le fichier loany
-    $filePath = 'uploads/' . basename($file['name']);
+    $filePath = $uploadDir . basename($file['name']);
     move_uploaded_file($file['tmp_name'], $filePath);
 
     // manao chargement an ilay fichier natao upload anaty dossier uploads 

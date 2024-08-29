@@ -1,14 +1,19 @@
-1) To run this file, you need php and composer
+1) To run this file, you need php 5 or higher and composer
 
 2) How to run ?
 
-    - You need to install the library usign one of these comand :
-        1) composer require phpoffice/phpspreadsheet
-            or
-        2) composer Install
-    - Create a new folder in the project, name the new folder as uploads, or else an error apears in the statement while counting the row, because we need to add the file in uploads folder before counting his row.
+    2-1) Install library :
 
-3) Once it done, open your project on terminal and use this comand to start the server :
-    php -S 127.0.0.1:8000
+        - You need to install the library usign one of these command :
+            * composer require phpoffice/phpspreadsheet
+                or
+            * composer Install
 
-4) Enjoy :) 
+    2-2) Start the server :
+        - Once library installed, open your project on terminal and use this command to start the server :
+            * php -S 127.0.0.1:8000
+    
+    2-3) Go to browser :
+        - Open your browser and type http://127.0.0.1:8000 in the url
+
+3) Enjoy :) 
