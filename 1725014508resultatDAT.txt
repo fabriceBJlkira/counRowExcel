@@ -1,0 +1,23 @@
+A01: 76| Total: 76
+A02: 10| Total: 10
+A03: 4| Total: 4
+A04: 5| Total: 5
+A05: 2| Total: 2
+A06: 1| Total: 1
+A07: 6| Total: 6
+A08: 2| Total: 2
+A11: 16| Total: 16
+A21: 5| Total: 5
+A22: 3| Total: 3
+A23: 45| Total: 45
+A24: 2| Total: 2
+A25: 14| Total: 14
+A31: 11| Total: 11
+A41: 7| Total: 7
+A51: 1| Total: 1
+A52: 4| Total: 4
+A53: 10| Total: 10
+A54: 7| Total: 7
+A61: 14| Total: 14
+
+Total globale: 245

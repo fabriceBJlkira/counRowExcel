@@ -1,0 +1,27 @@
+A01: 2842| Total: 2842
+A02: 1996| Total: 1996
+A03: 2206| Total: 2206
+A04: 1829| Total: 1829
+A05: 1842| Total: 1842
+A06: 1590| Total: 1590
+A07: 1114| Total: 1114
+A08: 985| Total: 985
+A09: 181| Total: 181
+A10: 436| Total: 436
+A11: 2157| Total: 2157
+A12: 271| Total: 271
+A13: 228| Total: 228
+A21: 2643| Total: 2643
+A22: 1830| Total: 1830
+A23: 1236| Total: 1236
+A24: 1074| Total: 1074
+A25: 797| Total: 797
+A31: 1812| Total: 1812
+A41: 2518| Total: 2518
+A51: 1504| Total: 1504
+A52: 190| Total: 190
+A53: 1964| Total: 1964
+A54: 1967| Total: 1967
+A61: 1153| Total: 1153
+
+Total globale: 36365

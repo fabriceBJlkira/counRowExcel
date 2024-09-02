@@ -1,0 +1,27 @@
+A01: 345| Total: 345
+A02: 157| Total: 157
+A03: 155| Total: 155
+A04: 116| Total: 116
+A05: 141| Total: 141
+A06: 235| Total: 235
+A07: 92| Total: 92
+A08: 75| Total: 75
+A09: 23| Total: 23
+A10: 61| Total: 61
+A11: 122| Total: 122
+A12: 68| Total: 68
+A13: 10| Total: 10
+A21: 284| Total: 284
+A22: 265| Total: 265
+A23: 97| Total: 97
+A24: 265| Total: 265
+A25: 67| Total: 67
+A31: 113| Total: 113
+A41: 146| Total: 146
+A51: 176| Total: 176
+A52: 87| Total: 87
+A53: 207| Total: 207
+A54: 167| Total: 167
+A61: 50| Total: 50
+
+Total globale: 3524

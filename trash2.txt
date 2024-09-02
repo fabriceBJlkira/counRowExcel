@@ -1,0 +1,78 @@
+<?php
+require 'vendor/autoload.php';
+
+use PhpOffice\PhpSpreadsheet\IOFactory;
+
+$globalAgence = []; // Initialize an empty array to store the sheet names and their values
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['excelFile'])) {
+    $file = $_FILES['excelFile'];
+
+    // Check for upload errors
+    if ($file['error'] !== UPLOAD_ERR_OK) {
+        die("Upload failed with error code " . $file['error']);
+    }
+
+    // Directory to upload the file
+    $uploadDir = 'uploads/';
+    
+    // Create the directory if it doesn't exist
+    if (!is_dir($uploadDir)) {
+        mkdir($uploadDir, 0755, true); // Creates the directory with read/write/execute permissions
+    }
+
+    // Move the uploaded file to the uploads directory
+    $filePath = $uploadDir . basename($file['name']);
+    move_uploaded_file($file['tmp_name'], $filePath);
+
+    // Load the uploaded file
+    $spreadsheet = IOFactory::load($filePath);
+    
+    // Get all sheet names
+    $sheetNames = $spreadsheet->getSheetNames();
+
+    // Iterate over each sheet
+    foreach ($sheetNames as $sheetIndex => $sheetName) {
+        $worksheet = $spreadsheet->getSheet($sheetIndex);
+
+        $davCount = 0;
+        $eprCount = 0;
+
+        // Read the data from the sheet
+        foreach ($worksheet->getRowIterator() as $row) {
+            $rowIndex = $row->getRowIndex();
+            $compteCell = $worksheet->getCellByColumnAndRow(16, $rowIndex); // 16th column
+            
+            $compteValue = $compteCell->getValue();
+            if (!empty($compteValue)) {
+                // Split multiple accounts by comma
+                $comptes = explode(',', $compteValue);
+                foreach ($comptes as $compte) {
+                    $compte = trim($compte);
+                    $length = strlen($compte);
+                    if ($length >= 5) {
+                        $fifthCharFromEnd = $compte[$length - 5];
+                        if ($fifthCharFromEnd === '0') {
+                            $davCount++;
+                        } elseif ($fifthCharFromEnd === '1') {
+                            $eprCount++;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Store the results for this sheet
+        $globalAgence[$sheetName] = [
+            'DAV' => $davCount,
+            'EPR' => $eprCount,
+        ];
+    }
+
+    unlink($filePath); // Delete the file after processing
+}
+
+// Output the results
+echo "<pre>";
+print_r($globalAgence);
+echo "</pre>";
